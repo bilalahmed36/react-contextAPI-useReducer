@@ -1,12 +1,11 @@
-import React from 'react';
-import Child from './Child'
-import Child2 from './Child2';
+import React, {useContext} from 'react';
+import CounterContext from './CounterContext';
 
 const Parent = () => {
+    const {state, onUpdate} = useContext(CounterContext);
     return(
         <div>
-            <Child />
-            <Child2/>
+            <button onClick={onUpdate}>Add Me</button>
         </div>
     );
 }
